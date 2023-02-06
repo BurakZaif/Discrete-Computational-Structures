@@ -1,0 +1,196 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+
+\begin{document}
+
+\section*{Student Information }
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Burak Zaifoğlu\\
+Id Number :  2522233\\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+Firstly I will show that $6^{(2n)}-1$ is divisible by 5.\\
+
+\begin{enumerate}
+    \item[Step 1]\\
+    Because of the least number in the domain, n = 1 is the first number to check. if we substitute one for n, $6^2-1 = 35$ which divisible by 5. So for 1, this claim is true.
+    \item[Step 2]\\
+    Let's assume that this is true for any k which is an element of the domain, so when $n=k$, $6^{2k}$ is divisible by 5.\\ 
+    $6^{2k} - 1 = 5m$ which m is a positive integer. $6^{2k} = 5m + 1$
+    \item[Step 3]\\
+    If it is true for any, it should be true for any k+1. We have to prove this. Let's show, when n:k+1, is $6^{2n}-1$ divisible by 5?\\
+    $6^{2(k+1)}-1 = 6^{2k}.6^2 - 1$ we can use the equation from step2. \\
+    $(5m+1).36-1 = 180m+35$\\
+    \\
+    So, $6^{2n}-1 = 5.(36m+7)$ and it is a multiple of 5. It is divisible by 5.
+
+    Secondly, Lets do it same thing for 7 and show it is divisible by 7.\\
+
+    \item[Step 1 ]\\
+    n=1 and $6^2-1 = 35$, 35 is divisible by 7.\\
+    \item[Step 2]\\
+Let's assume that this is true for any k which is an element of the domain, so when $n=k$,\\ $6^{2k}$ is divisible by 7.\\
+    $6^{2k} - 1 = 7m$ which m is a positive integer. $6^{2k} = 7m + 1$
+    \item[Step 3]\\ 
+If it is true for any, it should be true for any k+1. We have to prove this. Let's show, when\\ n:k+1, is $6^{2n}-1$ divisible by 7?\\
+    $6^{2(k+1)}-1 = 6^{2k}.6^2 - 1$ we can use the equation from step2. \\
+    $(7m+1).36-1 = 252m+35$\\
+    \\
+    So, $6^{2n}-1 = 7.(36m+5)$ and it is a multiple of 7. It is divisible by 7. \\
+    \\
+     We conclude that $6^{2n}-1$ is divisible by both 5 and 7.
+    
+\end{enumerate}
+
+\section*{Answer 2}
+\begin{enumerate}
+
+    \item[1-) Base:]\\
+        $H_0 = 1, H_1 = 5, H_2 = 7$, Least element of domain of $n \ge 3$ is 3 so another base case is 3. 
+        Let's try it for 3. \\
+
+        P(3) = $H_3 = 8H_2 + 8H_1 + 9H_0$ should be less or equal than $9^n$\\
+        P(3) = $8.7 + 8.5 + 9.1 = 115 \le 9^3$
+
+    \item[2-) ]\\
+    There is a 'k' which is $0 \le k \ge n$, Let's assume that this claim is true for any k.\\
+    P(k) = $H_{k-1}+H_{k-2}+H_{k-3}$ and $H_k \le 9^k$\\
+    So if this is true, this should satisfy any k+1\\
+    P(k+1) = $8H_k + 8H_{k-1} + 9H_{k-2}$\\
+    And I know that from for any k step $H_k \le 9^k$\\
+    $H_{k-1} \le 9^{k-1}$\\
+    $H_{k-2} \le 9^{k-2}$\\
+    
+    Let's substitute these:\\
+    P(k+1) = $H_{k+1} $$ \le 8.9^k+8.9^{k-1}+9.9^{k-2}$\\ If I arrange this I can clearly see that: P(k+1) = $H_{k+1} \le 9^{k+1}$\\
+
+    So $H^n \le 9^n$ is true for any element of the domain.
+    
+    
+\end{enumerate}
+\section*{Answer 3}
+For 8 bit string firstly, I will find for 4 consecutive 1 case:\\
+Let's put these four 1 in the first 4 slot:
+\begin{tabular}{|c|c|c|c|c}
+    \hline
+         $1$ & 1 & 1 & 1 & \\ \hline
+    \end{tabular}\\
+We don't know other 4 slot so, there is 2 option for every slot and total permutations are $2.2.2.2=2^4 =16$\\
+Let's move one step to the right each 1: Now we put 0 beginning of the 1's because at the beginning we include the case first slot is 1. \\
+\begin{tabular}{|c|c|c|c|c|c}
+    \hline
+         $0$ & 1 & 1 & 1 & 1 & \\ \hline
+    \end{tabular}\\
+    Now for the remaining three-step, we have $2^3 =8$ options total.\\
+Move on one more step: Again we put 0 at the beginning of 1's because 1 case is included above.
+\begin{tabular}{|c|c|c|c|c|c|c}
+    \hline
+         $$ & 0 & 1 & 1 & 1 & 1 & \\ \hline
+    \end{tabular}\\
+    Now we don't know the first slot and remaning 2 slot, there are $2^3 = 8$ options.\\
+    This continue like this:\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c}
+    \hline
+         $$ &  & 0 & 1 & 1 & 1 & 1 & \\ \hline
+    \end{tabular} There are $2^3 = 8$ options.\\
+    
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+         $$ &  &  & 0 & 1 & 1 & 1 & 1  \\ \hline
+    \end{tabular} There are $2^3 = 8$ options.\\
+
+    There are total $16+8+8+8+8 = 48$ options for four consecutive 1.\\
+    
+    Let's calculate for 0's:\\
+    \begin{tabular}{|c|c|c|c|c}
+    \hline
+         $0$ & 0 & 0 & 0 & \\ \hline
+    \end{tabular} There are $2^4 = 16$ options.\\
+
+    \begin{tabular}{|c|c|c|c|c|c}
+    \hline
+         $1$ & 0 & 0 & 0 & 0\\ \hline
+    \end{tabular} There are $2^3 = 8$ options.\\
+
+    \begin{tabular}{|c|c|c|c|c|c|c}
+    \hline
+         $$ & 1 & 0 & 0 & 0 & 0\\ \hline
+    \end{tabular} There are $2^3 = 8$ options.\\
+
+    \begin{tabular}{|c|c|c|c|c|c|c|c}
+    \hline
+         $$ &  & 1 & 0 & 0 & 0 & 0\\ \hline
+    \end{tabular} There are $2^3 = 8$ options.\\
+
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \hline
+         $$ &  &  & 1 & 0 & 0 & 0 & 0\\ \hline
+    \end{tabular} There are $2^3 = 8$ options.\\
+
+    There are total $16+8+8+8+8 = 48$ options for four consecutive 0.\\
+    On the other hand, we calculate the case:\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \hline
+         $1$ & 1 & 1 & 1 & 0 & 0 & 0 & 0\\ \hline
+    \end{tabular} or vice versa above. Let's subtract these two case:\\
+    
+    $48+48-2 = 94$ options.\\
+\end{enumerate} 
+
+\section*{Answer 4}
+To form a galaxy:\\
+I have to choose 1 Star: C(10,1)\\
+I have to choose 2 habitable planets: C(20,2)\\
+I have to choose 8 unhabitable planets: C(80,8)\\
+So we can choose it by C(10,1).C(20,2).C(80,8)\\
+
+Let's order these planets with given conditions:\\
+Also, we can change the order of two habitable ones with 2!.
+Firstly, There are 6 unhabitable planets between two habitable ones. We can choose this 6 planet with C(8,6) and order with 6!. If we think of these 8 planets like a package, then there will be 3 elements to order. So I can order them with 3!. To sum up, there will be C(8,6).6!.3! options for this one.\\
+
+Secondly, There are 7 unhabitable planets between two habitable ones. We can choose this 7 planets with C(8,7) and order with 7!. If we think this 9 planet as a package, then there will be 2 elements to order. So I can order them with 2!. To sum up, there will be C(8,7).7!.2! options for this one. \\
+
+Finally, There are 8 unhabitable planets between two habitable ones. We can choose this 8 planet with C(8,8) and order with 8!. So there are no more element to order. So There are C(8,8).8! options.\\
+
+In addition, I can order two habitable planet with 2! for above three case. In conclusion totally, From begining, ıf I them choose and order for each case, there will be \\
+C(10,1). C(20,2). C(80,8). 2!. (C(8,6).6!,3! + C(8,7).7!.2! + C(8,8).8!)\\
+\section*{Answer 5}
+\paragraph{a)}
+Let's say P(n) is the number of paths for the robot to go to n cells away from the starting position.\\
+
+In order to move to 1 cell away from its initial location, there is 1 possibility. So P(1) = 1\\
+
+To move 2 cells, P(2) = 2\\
+P(3)=4\\
+
+For P(4) there are P(4) = P(3)+P(2)+P(1) because each jump reduces the probability by its own jump amount. So in general, I can say:\\
+
+P(n) = P(n-1) + P(n-2) + P(n-3)\\
+
+\paragraph{b)}
+P(1) = 1, P(2) = 2, P(3) = 4 for every n which is $n\ge4$\\
+\paragraph{c)}
+Let's calculate the P(9)\\
+P(4) = P(3) + P(2) + P(1) = 7\\
+P(5) = 13\\
+P(6) = 24\\
+P(7) = 44\\
+P(8) = 81\\
+P(9) = 149
+
+\end{document}

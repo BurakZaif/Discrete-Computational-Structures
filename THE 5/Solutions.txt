@@ -1,0 +1,224 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+
+
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Burak Zaifoğlu\\
+Id Number :  2522233\\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+\begin{enumerate}
+    \item [a) ]
+    deg(a)=3\\
+    deg(b)=3\\
+    deg(c)=3\\
+    deg(d)=2\\
+    deg(e)=3\\ 
+    The sum of degrees of all nodes of G is 14.\\
+    \item[b) ]
+    \begin{tabular}{c|c c c c c}
+         & a & b & c & d & e \\
+         \hline
+         a & 0 & 1 & 1 & 0 & 1\\
+         b & 1 & 0 & 1 & 0 & 1\\
+         c & 1 & 1 & 0 & 1 & 0\\
+         d & 0 & 0 & 1 & 0 & 1\\
+         e & 1 & 1 & 0 & 1 & 0\\
+    \end{tabular}\\
+    \\
+    The number of non-zero entries in the adjacency matrix representation of G is 14.\\
+    \item[c) ]
+    \begin{tabular}{c|c c c c c c c}
+         & $e_1$ & $e_2$ & $e_3$ & $e_4$ & $e_5$ & $e_6$ & $e_7$\\
+         \hline
+         a & 0 & 1 & 0 & 1 & 1 & 0 & 0\\
+         b & 1 & 1 & 1 & 0 & 0 & 0 & 0\\
+         c & 1 & 0 & 0 & 1 & 0 & 0 & 1\\
+         d & 0 & 0 & 0 & 0 & 0 & 1 & 1\\
+         e & 0 & 0 & 1 & 0 & 1 & 1 & 0\\
+    \end{tabular}\\
+    \\
+    The number of zero entries in the incidence matrix representation of G is 21.
+    \item[d) ]
+    No, there is no such complete graph with at least 4 vertices as a subgraph because if we choose any four vertices, not every vertice has an edge with each other.
+    \item[e) ]
+    No, it is not, because there are no 2 separate sets that do not have a connection between their elements. To be, bipartite, there should be 2 separate sets with no connection between them.
+    \item[f) ]
+    There are $2^7$ directed graphs that has G as their underlying undirected graph because there is 7 edge and there are 2 possibilities for each edge. So there are 2.2.2.2.2.2.2=$2^7$ possible directed graphs.
+    \item[g) ]
+    There are many possibilities for the longest path with length 4, but my choice is b-a-c-d-e.
+    \item[h) ]
+    This graph is a connected graph so there is a path between every vertex. If you follow the path by passing every vertex only 1 time, there will not be a remaining vertex. This means that there is 1 connected component.
+    \item[i) ]
+    No, there is no Euler circuit in G because there are more than 0 vertexes with odd degrees.
+    \item[j) ]
+    No, there is no Euler path in G because there are more than 0 or 2 vertexes with odd degrees.
+    \item[k) ]
+    Yes, G has a Hamilton circuit which is b-a-c-d-e-b. It returns the same vertex by passing by every vertex exactly one time.
+    \item[l) ]
+    Yes, G has a Hamilton path which is b-a-c-d-e. It passes by every vertex exactly one time.
+\end{enumerate}
+    
+
+\section*{Answer 2}
+G($V_1$,$E_1$) and H($V_2$,$E_2$) are isomorphic because $\exists$ a bijection (1-to-1 & onto) f:$V_1 \implies V_2$ such that $\forall \{ x_1, x_2 \} \in E_1$ $\iff \{f(x),f(y)\} \in E_2$\\
+\\
+If we make it more clear,\\
+$V_1 = \{a,b,c,d,e \}$ and $V_2 = \{a^',$$ b^',$$ c^',$$ d^',$$ e^'$$ \}$. So, there is the same number of vertexes, and their appearance in the function is equivalent. For instance, \\
+f(a,b) = $f(a^'$ $,b^'$$)$\\
+f(a,e) = $f(a^'$ $,e^'$$)$\\
+f(d,c) = $f(d^'$ $,c^'$$)$\\
+f(d,e) = $f(d^'$ $,e^'$$)$\\
+f(b,c) = $f(b^'$ $,c^'$$)$\\
+So, they are isomorphic. 
+\section*{Answer 3}
+Let's begin with vertex s, and its distance is zero. All remaining vertex distances are infinity.\\
+\begin{tabular}{c c c c c c c c c}
+         & s & u & v & w & x & y & z & t\\
+         \hline
+         & \textcircled{0} & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ &
+         $\infty$\\
+         \hline
+         previous & - & - & - & - & - & - & - & -\\
+    \end{tabular}\\
+    \\
+    If the lengths of the vertexes adjacent to s are less than the previous ones, they are changed and the next vertex with the smallest value is selected.\\
+    \begin{tabular}{c c c c c c c c c}
+         & s & u & v & w & x & y & z & t\\
+         \hline
+         & \textcircled{0} & 4 & 5 & \textcircled{3} & $\infty$ & $\infty$ & $\infty$ &
+         $\infty$\\
+         \hline
+         previous & - & - & - & s & - & - & - & -\\
+    \end{tabular}\\
+    \\
+    Let's continue with vertex w and then the vertex with less length.\\
+    \begin{tabular}{c c c c c c c c c}
+         & s & u & v & w & x & y & z & t\\
+         \hline
+         & \textcircled{0} & \textcircled{4} & 5 & \textcircled{3} & 11 & $\infty$ & 15 &
+         $\infty$\\
+         \hline
+         previous & - & s & - & s & - & - & - & -\\
+    \end{tabular}\\
+    \\
+    Let's continue with vertex u and then the vertex with less length.\\
+    \begin{tabular}{c c c c c c c c c}
+         & s & u & v & w & x & y & z & t\\
+         \hline
+         & \textcircled{0} & \textcircled{4} & \textcircled{5} & \textcircled{3} & 11 & 15 & 15 &
+         $\infty$\\
+         \hline
+         previous & - & s & s & s & - & - & - & -\\
+    \end{tabular}\\
+    \\
+    Let's continue with vertex v and then the vertex with less length.\\
+    \begin{tabular}{c c c c c c c c c}
+         & s & u & v & w & x & y & z & t\\
+         \hline
+         & \textcircled{0} & \textcircled{4} & \textcircled{5} & \textcircled{3} & \textcircled{7} & 11 & 15 &
+         $\infty$\\
+         \hline
+         previous & - & s & s & s & v & - & - & -\\
+    \end{tabular}\\
+    \\
+    Let's continue with vertex x and then the vertex with less length.\\
+    \begin{tabular}{c c c c c c c c c}
+         & s & u & v & w & x & y & z & t\\
+         \hline
+         & \textcircled{0} & \textcircled{4} & \textcircled{5} & \textcircled{3} & \textcircled{7} & \textcircled{8} & 13 &
+         $\infty$\\
+         \hline
+         previous & - & s & s & s & v & x & - & -\\
+    \end{tabular}\\
+    \\
+    Let's continue with vertex y and then the vertex with less length.\\
+    \begin{tabular}{c c c c c c c c c}
+         & s & u & v & w & x & y & z & t\\
+         \hline
+         & \textcircled{0} & \textcircled{4} & \textcircled{5} & \textcircled{3} & \textcircled{7} & \textcircled{8} & \textcircled{12} & 17\\
+         \hline
+         previous & - & s & s & s & v & x & y & -\\
+    \end{tabular}\\
+    \\
+    Let's continue with vertex z and then the vertex with less length.\\
+    \begin{tabular}{c c c c c c c c c}
+         & s & u & v & w & x & y & z & t\\
+         \hline
+         & \textcircled{0} & \textcircled{4} & \textcircled{5} & \textcircled{3} & \textcircled{7} & \textcircled{8} & \textcircled{12} & \textcircled{15}\\
+         \hline
+         previous & - & s & s & s & v & x & y & z\\
+    \end{tabular}\\
+    \\
+    If we backtrack the path, our path is s-v-x-y-z-t and its length is 15.
+\section*{Answer 4}
+\begin{enumerate}
+    I choose Kruskal's algorithm.\\
+    \\
+    a) When we select it, we should not select the edges that make a circle.
+    First, added edges with length 2,\\
+    (b,c),(c,f),(h,i),(d,k),\\
+    \\
+    Secondly, added edges with length 3,\\
+    (a,b),(c,d),(f,j),\\
+    \\
+    Then, added edges with length 4,\\
+    (e,f),(f,g),(f,i).\\
+     \\
+    \newline 
+    \newline 
+    \newline
+    \newline
+    \newline
+    b) 
+    \\
+    \begin{tikzpicture}[scale=.7]
+        \node (b) at (2,4) {$b$};
+        \node (c) at (4,4) {$c$};
+        \node (d) at (6,4) {$d$};
+        \node (a) at (0,2) {$a$};
+        \node (e) at (2,2) {$e$};
+        \node (f) at (4,2) {$f$};
+        \node (g) at (6,2) {$g$};
+        \node (k) at (8,2) {$k$};
+        \node (h) at (2,0) {$h$};
+        \node (i) at (4,0) {$i$};
+        \node (j) at (6,0) {$j$};
+        \draw (a) -- node[above] {3} (b);
+        \draw (b) -- node[above] {2} (c);
+        \draw (c) -- node[above] {3} (d);
+        \draw (d) -- node[above] {2} (k);
+        \draw (c) -- node[right] {2} (f);
+        \draw (e) -- node[above] {4} (f);
+        \draw (f) -- node[above] {4} (g);
+        \draw (f) -- node[left] {4} (i);
+        \draw (f) -- node[above] {3} (j);
+        \draw (h) -- node[above] {2} (i);
+\end{tikzpicture}
+    \\
+    \item[c) ]
+    c)\\
+    No, it is not unique because it is dependent on which order I choose the edges. For example, if I choose one edge with weight 3, I can not choose another edge with weight 3 because of the avoiding loop and this means I choose 1 possibility out of 2.
+\end{enumerate}
+
+\end{document}

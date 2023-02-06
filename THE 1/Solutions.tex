@@ -1,0 +1,144 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+\usepackage{fitch}
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Burak Zaifoğlu \\
+Id Number :  2522233 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+\begin{enumerate}
+    \item[a) ]    
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+         $p   & q & (p\land q) & (\neg p \land \neg q) & (p\land q) \iff (\neg p \land \neg q)$\\ \hline
+         $T$ & T & T & F & F\\ \hline
+         $T$ & F & F & T & F\\ \hline
+         $F$ & T & F & T & F\\ \hline
+         $F$ & F & F & T & F\\ \hline
+    \end{tabular}
+    $\: Contradiction$
+    \item[b) ]
+    \begin{tabular}{l c}
+    $p \implies ((q  \vee \neg q) \implies (p \land q)) \iff (\neg p \vee q)$\\
+    $p\implies (T \implies (p \land q)) $    & Negation Laws\\
+    $p \implies (\neg T \vee (p \land q)) $ &    Table 7, Line 1\\
+    $p \implies (F \vee (p \land q)) $     &     -         \\
+    $p \implies (p \land q)  $            & Identity Laws\\
+    $(p \implies p) \land (p \implies q)$    &       Table 7, Line 6\\
+    $T \land (p \implies q)$ &  - \\
+    $p \implies q$ &Identity Laws\\
+    $ \neg p \vee q$ &Table 7, Line 1\\
+    \end{tabular}
+\end{enumerate}
+
+\section*{Answer 2}
+\begin{enumerate}
+    \item [a) ]
+    $\forall x \exists y \: W(x,y)$\\
+    \item[b) ]
+    $\neg \forall y \exists x \: F(x,y) $\\
+    \item[c) ]
+    $\forall$ x (W(x,P) \implies A(Ali,x))$ \\
+    \item[d) ]
+    $\exists x (W(Büsra,x) \land F(TUBITAK,x))$\\
+    \item[e) ]
+    $\exists x \exists y \exists z (S(x,y) \land S(x,z) \land y\neq z)$\\
+    \item[f) ]
+    $\forall x\forall y(W(x,z) \land W(y,z) \implies x = y)$\\
+    \item[g) ]
+    $\exists x \exists y \exists z \forall c ((W(x,z) \land W(y,z) \land (x \neq y)) \land ((x\neq c \land y \neq c \land x \neq y) \implies \neg W(c,z)) $
+\end{enumerate}
+
+
+\section*{Answer 3}
+\[
+\begin{nd}
+\hypo {1} {p\implies Q}
+\hypo {2} {(q \land \neg r) \implies s}
+\hypo {3} {\neg s}
+\open
+\hypo {4} {p}
+\have {5} {q} \ie{1,4}
+\open 
+\hypo {6} {q \land \neg r} 
+\have {7} {q} \r{}
+\open
+\hypo {8} {\neg r}
+\have {9} {s} \ie{2,6-8}
+\have {10} {\perp} \ne{3,9}
+\close
+\have {11} {\neg\neg r} \ni{8-10}
+\have {12} {r} \nne{11}
+\close
+\have {13} {r} \ae{2,6-12}
+\close
+\have {14} {p \implies r} \ii{4,13}
+\end{nd}
+\]
+
+
+\section*{Answer 4}
+\[
+\begin{nd}
+\hypo {1} {p}
+\hypo {2} {p \implies (q \land r))}
+\hypo {3} {r \implies s}
+\have {4} {q \land r} \ie{1,2}
+\have {5} {q} \ae{4}
+\have {6} {r} \ae{4}
+\have {7} {s} \ie{3}
+\open
+\hypo {8} {s \implies \neg q}
+\have {9} {s} \ie{8}
+\have {10} {\neg q} \ie{8}
+\have {11} {\perp} \ne{5,10}
+\close
+\have {12} {\neg (s\implies \neg q)} \ni{8-11}
+\end{nd}
+\]
+
+
+\section*{Answer 5}
+\[
+\begin{nd}
+\hypo {1} {\forall x(P(x) \implies (Q(x) \implies R(x)))}
+\hypo {2} {\exists x P(x)} 
+\hypo {3} {\forall x (\neg R(x))}
+\open
+\hypo {4} {c}
+\hypo {5} {P(c)}
+\have {6} {P(c) \implies (Q(c) \implies R(c))} \Ae{1} 
+\have {7} {Q(c) \implies R(c)} \ie{6}
+\open
+\hypo {8} {Q(c)}
+\have {9} {R(c)} \ie{7,8}
+\have {10} {\neg R(c)} \Ae{3}
+\have {11} {\perp} \ne{9,10}
+\close
+\have {12} {\neg Q(c)} \ni{8-11}
+\have {13} {\exists x (\neg Q(x))} \Ei{11}
+\close
+\have {14} {\exists x (\neg Q(x))0 \Ee{2,4-13}}
+\end{nd}
+\]
+
+\end{document}

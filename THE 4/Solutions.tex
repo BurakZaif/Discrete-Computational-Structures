@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Burak Zaifoğlu\\
+Id Number :  2522233\\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+Firstly, let's look at first 3 terms;\\
+$3a_1 + 4a_0 = a_2$\\
+$3a_2 + 4a_1 = a_3$\\
+$3a_3 + 4a_2 = a_4$\\
+To use generating functions, multiply nth row with $x^n$;\\
+(n = 2) $3a_1.x^2 - 4a_0.x^2 = a_2.x^2$\\
+(n = 3) $3a_2.x^3 - 4a_1.x^3 = a_3.x^3$\\
+(n = 4) $3a_3.x^4 - 4a_2.x^4 = a_4.x^4$\\
+Then taking the same column elements(some coefficients ordering with x^n):\\
+$3a_1.x^2+3a_2.x^3+3a_3.x^4+........ = 3$$ \Sigma_{i\ge1}^\infty = a_i.x^{i+1}$\\
+$4a_0.x^2+4a_1.x^3+4a_2.x^4+........ = 4$$ \Sigma_{i\ge0}^\infty = a_i.x^{i+2}$\\
+$a_2.x^2+a_3.x^3+a_4.x^4+........... = $$ \Sigma_{i\ge2}^\infty = a_i.x^i$\\
+let's put these sigma notations in recurrence relation:\\
+$ 3\Sigma_{i\ge1}^\infty = a_i.x^{i+1}$ + $ 4\Sigma_{i\ge0}^\infty = a_i.x^{i+2}$ = $ \Sigma_{i\ge2}^\infty = a_i.x^i$\\
+If we assume that f(x) is $ \Sigma_{i\ge0}^\infty = a_i.x^i$, we can write the above equation like this:\\
+$3x(f(x)-a_0)+4x^2f(x) = f(x) - a_0 - a_1.x$ and substitute $a_0$ and $a_1$:\\
+$3x(f(x)-1)+4x^2f(x) = f(x) - 1 -x$\\
+Arranged form of the equation : \\
+$f(x) = \frac{2x-1}{4x^2+3x-1}$ then if we should make partial fraction:\\
+$f(x) = \frac{A}{4x-1}+\frac{B}{x+1} = A.(x+1)+B(4x-1) = 2x-1$\\
+After solve the above equation for A and B:\\
+$A = \frac{-2}{5}$ and $B = \frac{3}{5}$\\
+$f(x) = \frac{-2/5}{4x-1}+\frac{3/5}{x+1}$\\
+The closed form of the $\frac{-2/5}{4x-1} = -2/5.-(4)^n$\\
+The closed form of the $\frac{3/5}{x+1} = 3/5.(-1)^n$\\
+So $a_n = 2/5.(4)^n + 3/5.(-1)^n$
+
+\section*{Answer 2}
+\subsection*{a) }\\
+I can separate the following sequence like this:\\
+$<2, 5, 11, 29, 83, 245, · · ·> = <2,2,2,2,2,2,2,.....> + <0,3,9,27,81,.......>$\\
+The power series notation of the sequence $<2,2,2,2,2,2,2,.....> $is $2\Sigma_{n=0}^\infty = x^n$\\
+and closed form of this sigma notation is $\frac{2}{1-x}$\\
+The power series notation of the sequence $<1,3,9,27,81,.......> $is $\Sigma_{n=0}^\infty = 3^n.x^n$ but for first term to be equal subtract 1 and
+get $\Sigma_{n=0}^\infty = 3^n.x^n -1$ and closed form of this sigma notation is $\frac{1}{1-3x}-1$ = $\frac{3x}{1-3x}$\\
+\\
+So closed form of the first given sequence is $G(x) = \frac{2}{1-x}$ + $\frac{3x}{1-3x}$\\
+
+\subsection*{b) }
+Firstly, to separate 2 distinct fractions, we use partial fractions and get:\\
+$G(x) = \frac{A}{2x-1}+\frac{B}{x-1}$ If we solve for this, A = -5 and B = -2.\\
+$G(x) = \frac{-5}{2x-1}+\frac{-2}{x-1}$\\
+Expansion of the $\frac{-5}{2x-1}$ which is $\frac{5}{1-2x}$ is $5.<1,2,4,8,16,32,....>$\\
+and expansion of the $\frac{-2}{x-1}$ which is $\frac{2}{1-x}$ is $2.<1,1,1,1,1,.....>$.\\
+So if I add them because of the above G(x) function, I get\\
+$G(x) = 5.<1,2,4,8,16,32,....> + 2.<1,1,1,1,1,.....> = <7,12,22,42,82,162,....>$\\
+
+\section*{Answer 3}
+\subsection*{a) }
+If we consider R is a equivalence relation, then 3R4 because there is a right triangle which is edges are 3,4 and 5 which 5$\in Z$. \\
+\\
+Also if R is equivalence then there should be a pair of 3R3 because of the reflexivity of the relation.\\
+After that there should be a right triangle providing the relation. On the other hand, if the two sides of a right triangle are 3 and 3, then the last side has to be $3\sqrt{2}$ which is $\notin Z$. \\
+These mean that R is not an equivalence relation.
+\subsection*{b) }\\
+There is a 3 conditions to be equivalence relation. Let's check them:\\
+Let $\forall a, b \in R$\\
+Is the relation Reflexive: 2a+b = 2a+b $\longrightarrow$ (a,b) R (a,b) (YES)\\
+\\
+Let $\forall a,b,c,d \in R$\\
+Is the relation Symmetric: 2a+b = 2c+d $\longrightarrow$ (a,b) R (c,d) \\
+                            2c+d = 2a+b $\longrightarrow$ (c,d) R (a,b) (YES)\\
+                            \\
+Let $\forall a,b,c,d,e,f \in R$\\
+Is the relation Transitive: 2a+b = 2c+d $\longrightarrow$  (a,b) R (c,d) \\
+                            2c+d = 2e+f $\longrightarrow$ (c,d) R (e,f)\\
+                           2a+b = 2e+f $\longrightarrow$ (a,b) R (e,f) (YES)\\
+It provides all conditions so it is a equivalence relation.\\
+\\
+For (1,-2), it is 2.(1)+(-2) = 0. Everything which has result of 0 can be equivalence class of this.\\
+The general showing of this equivalence class is $\forall k \in R$ (-k, 2k).\\
+$[(1, −2)]_R = \{(-k, 2k)|x\in R\}$ and it represents a line in the cartesian coordinate system which formula of it is y = −2x.\\
+
+
+\section*{Answer 4}
+\begin{enumerate}
+    \item[a) ]\\
+    Hasse diagram of R is:\\
+    \begin{tikzpicture}[scale=.7]
+        \node (sixty) at (0,4) {$60$};
+        \node (ten) at (-2,2) {$10$};
+        \node (eighteen) at (2,2) {$18$};
+        \node (five) at (-2,0) {$5$};
+        \node (two) at (0,0) {$2$};
+        \draw (two) -- (ten);
+        \draw (two) -- (eighteen);
+        \draw (ten) -- (sixty);
+        \draw (five) -- (ten);
+\end{tikzpicture}
+    \item[b) ]\\
+    R = $\{{(2,2),(5,5),(10,10),(18,18),(60,60),(2,60),(2,10),(2,18),(5,10),(5,60),(10,60)\}$\\
+        Matrix Representation for R is :\\
+        \\
+        \begin{tabular}{|c c c c c|}
+                             $1$ & 0 & 1 & 1 & 1\\ 
+                             $0$ & 1 & 1 & 0 & 1\\ 
+                             $0$ & 0 & 1 & 0 & 1\\ 
+                             $0$ & 0 & 0 & 1 & 0\\ 
+                             $0$ & 0 & 0 & 0 & 1\\ 
+    \end{tabular}
+
+    \item[c) ]\\
+    $R_s$ is the symmetric closure of R. So we should add symmetric pairs which is not in the R.\\
+    All pairs (x,y) where (x, y) $\in R_s \wedge (x, y) \notin R$ = $\{(60,2), (10,2), (18,2), (10,5), (60,10), (60,5)\}$\\
+    Matrix Representation for $R_s$ is :\\
+    \\
+    \begin{tabular}{|c c c c c|}
+                             $1$ & 0 & 1 & 1 & 1\\ 
+                             $0$ & 1 & 1 & 0 & 1\\ 
+                             $1$ & 1 & 1 & 0 & 1\\ 
+                             $1$ & 0 & 0 & 1 & 0\\ 
+                             $1$ & 1 & 1 & 0 & 1\\ 
+    \end{tabular}
+
+    \item[d) ]\\
+    No, it is impossible with 1 removing. We can not do that total ordering because original hasse diagram do not include such a element or do not have such a shape.\\
+    \\
+    On the other hand, with two removing such as 5 and 18, I can get total ordering. Also I can preserve total ordering by adding a number that is a multiple of 60.
+\end{enumerate}
+
+\end{document}

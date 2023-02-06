@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :  Burak Zaifoğlu\\
+Id Number :  2522233\\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+\paragraph{a)} If we take -1 in the codomain of f and say f(x) = -1. \hspace We know that $f(x) = x^2$. \hspace So it should be $x^2 = -1$. \hspace $x = \sqrt{-1}$. There is no such x which is in the domain of f. In conclusion, $f1 : R -> R, f(x) = x^2$ statement is not surjective. \\
+\\
+Let's take two element x,y which domain of f. They are 1-to-1 if $f(x) = f(y) and x = y$ but $f(-1) = f(1)$ on the other hand $1 \not= -1$ In conclusion, This statement is not injective. % For f_1
+\paragraph{b)} If we take -1 in the codomain of f and say f(x) = -1. \hspace We know that $f(x) = x^2$. \hspace So it should be $x^2 = -1$. \hspace $x = \sqrt{-1}$. There is no such x which is in the domain of f. In conclusion, $f1 : R -> R, f(x) = x^2$ statement is not surjective.\\
+\\
+In the domain of f, Let's take two elements x,y. They are 1-to-1, if $f(x) = f(y)$ and $x = y$. \hspace  In this case, $f(x) = x^2$, $f(y) = y^2$ and $x^2 = y^2$. If we both take square root $\sqrt{x^2} = \sqrt{y^2}$ then $|a| = |b|$ because domain is positive real numbers and $x=y$. x and y were arbitrary so this hold all \forall x,y \in $\mathbb R_{\ge 0}$. Thus f is injective. % For f_2
+\paragraph{c)} If we take any y \in $\mathbb R_{\ge 0}$. It should be $f(x) = y$, $f(x) = x^2$, so $x^2 = y$ and $\sqrt{y} = x$. $f(x) = f(y)= \sqrt{y}^2 = y$. This shows that f is surjective.\\
+\\
+Let's take two element x,y, f is 1-to-1 if $f(x) = f(y)$ and $x=y$ but if we take -1 and 1, $f(-1) = f(1)$ on the other hand $-1 \not= 1$. Thus, f is not injective.
+% For f_1
+\paragraph{d)} If we take any y \in $\mathbb R_{\ge 0}$. It should be $f(x) = y$, $f(x) = x^2$, so $x^2 = y$ and $\sqrt{y} = x$. Then $f(x) = f(\sqrt{y}) = \sqrt{y}^2 = y$. This shows that f is surjective. \\
+\\
+In the domain of f, Let's take two elements x,y. They are 1-to-1, if $f(x) = f(y)$ and $x = y$. \hspace  In this case, $f(x) = x^2$, $f(y) = y^2$ and $x^2 = y^2$. If we both take square root $\sqrt{x^2} = \sqrt{y^2}$ then $|a| = |b|$ because domain is positive real numbers and $x=y$. x and y were arbitrary so this hold all \forall x,y \in $\mathbb R_{\ge 0}$. Thus f is injective.
+% For f_1
+
+\section*{Answer 2}
+\paragraph{a)}
+Assume that any f which is $f: A \subset Z \implies R$. To verify the statement in the definition, take any arbitrary variables. Such as If take x which is the element of Z and the epsilon bigger than zero. Then $δ $ should be less to verify both sides. For example, δ is 0.1. \\
+
+Assume that $|x - x_0|<δ=0.1$. At this distance at the number line, there is only one integer, so $x_0 and x$ are equal and the same number. In this way, $f(x) = f(x_0)$ and their difference is equal to 0. \\
+In the beginning, we take epsilon bigger than 0 and our variable ($x_0$) was arbitrary. So we can say that f is continuous on its domain. 
+\paragraph{b)} (Proof by contradiction) \\
+Take any arbitrary x and $x_0$ and for all these, I can take δ as bigger than $|x - x_0|$. Also, assume f(x) and $f(x_0)$ are not the same and there is an epsilon that is less than  the function difference. These conditions do not satisfy the definition, so being continuous is false. By Contradiction, as proved by part a, they should be the same. In this way, the beginning condition will be satisfied and there will be continuity.
+
+\section*{Answer 3} 
+\paragraph{a)}
+There are finite (n many) countable sets,\\
+\\
+n many sets
+\begin{tabular}{c c}
+         $ & A = {$a_1$, $a_2$, $a_3$, .............$a_n$}$\\ 
+         $ & B = {$b_1$, $b_2$, $b_3$, .............$b_n$}$ \\
+         $ & C = {$c_1$, $c_2$, $c_3$, .............$c_n$}$ \\
+         $ & .$ \\
+         $ & .$ \\ 
+         $ & .$ \\ 
+         $ & .$ \\
+    \end{tabular}
+
+If we take Cartesian product of two of them, it will be like \\
+\begin{tabular}{c|c c c c}
+         $$ & $b_1$ & $b_2$ & $b_3$\\ \hline
+         $ a_1$ & ($a_1$,$b_1$) & ($a_1$,$b_2$) & ($a_1$,$b_3$) & .\\ 
+         $ a_2$ & ($a_2$,$b_1$) & ($a_2$,$b_2$) & ($a_2$,$b_3$) & .\\ 
+         $ a_3$ & ($a_3$,$b_1$) & ($a_3$,$b_2$) & ($a_3$,$b_3$) & .\\ 
+         $ & .$ & .& .& . \\
+    \end{tabular}
+    \\
+    We can say that the set of AxB is countable with taking diagonal entries of this. With help of this, this set is 1-to-1 corresponding with the natural number set of N and its element. It is countable.
+
+\paragraph{b)} (Proof by Contradiction) Assume that the set of the infinite countable products of the set $X = {0, 1}$ with itself is countable. So, \\
+\\
+\begin{tabular}{c c c c c}
+         $ A_1 = $ & ($a_11$) & ($a_12$) & ($a_13$) & ($a_14$) & .\\ 
+         $ A_2 = $ & ($a_21$) & ($a_22$) & ($a_23$) & ($a_24$) & .\\ 
+         $ A_3 = $ & ($a_31$) & ($a_32$) & ($a_33$) & ($a_34$) & .\\ 
+         $ A_4 = $ & ($a_41$) & ($a_42$) & ($a_43$) & ($a_44$) & .\\ 
+         $ . & .$ & .& .& . \\
+         $ . & .$ & .& .& . \\
+         $ A_i = $ & ($a_i1$) & ($a_i2$) & ($a_i3$) & ($a_i4$) & .\\ 
+         $ . & .$ & .& .& . \\
+         $ . & .$ & .& .& . \\
+    \end{tabular}
+    \\   
+    Construct a real number not in the list. 
+    \\
+    B = $b_1$, $b_2$, $b_3$, $b_4$ .....
+
+    $b_i$ \in {0,1}\\
+\begin{tabular}{c c c}
+         $ $ & 1 if $a_ii = 0$ \\ 
+         $ b_i$ \\ 
+         $ $ & 0 if $a_ii = 1$ \\ 
+    \end{tabular}
+\\
+
+In this way, If I choose any A in the set then the diagonal elements of this set will be different then B. So B is not in the list and this contradicts with assumption. In conclusion, the set of the infinite countable products of the set $X = {0, 1}$ with itself are uncountable.
+\section*{Answer 4}
+When we are comparing a function's Big O, we can use the limit of comparing two functions' divisions when the variable goes to infinity. In this case, the result goes to 0 or a finite number if the nominator's Big O is the denominator. I will show the functions of Big O's in this way.
+\paragraph{a)} $\lim_{n\to\infty}$ $\frac{(\log{n})^2}{\sqrt{n}\log{n}}$ =(by L'Hospital rule) $\lim_{n\to\infty}$ $\frac{\frac{1}{n \ln{10}}}{\frac{1}{2\sqrt{n}}}$ = $\lim_{n\to\infty}$ $\frac{2\sqrt{n}}{n\ln{10}}$ = $\lim_{n\to\infty}$ $\frac{1\ln{10}}{\sqrt{n}} = 0$\\ 
+\\
+So $\sqrt{n}\log{n}$ is Big O of $(\log{n})^2$.
+%Compare your first and second functions
+\paragraph{b)}  $\lim_{n\to\infty}$ $\frac{\sqrt{n}\log{n}}{n^{50}}$ = $\lim_{n\to\infty}$ $\frac{\sqrt{n}\log{n}}{n^{49} n}$ = $\lim_{n\to\infty}$ $\frac{\log{n}}{n^{49} \sqrt{n}}$ = (by L'Hospital Rule) $\lim_{n\to\infty}$ $\frac{\frac{1}{n \ln{10}}}{\frac{99 n^{\frac{97}{2}}}{2}}$ = $\lim_{n\to\infty}$ $\frac{2}{99n^{\frac{99}{2}\ln{10}}}$ = $0$. \\
+\\
+So $n^{50}$ is Big O of $\sqrt{n}\log{n}$.
+% Compare your second and third functions
+\paragraph{c)} $\lim_{n\to\infty}$ $\frac{n^{50}}{n^{51}+n^{49}}$ = $\lim_{n\to\infty}$ $\frac{n}{n^{2}+1}$ = (by L'Hospital Rule) $\lim_{n\to\infty}$ $\frac{1}{2n}$ = 0. \\
+\\
+So $n^{51}+n^{49}$ is Big O of $n^{50}$.
+\paragraph{d)} $\lim_{n\to\infty}$ $\frac{n^{51}+n^{49}}{2^{n}}$. \\
+\\
+In this limit up to infinity $2^{n}$ growing faster than $n^{51}+n^{49}$ so this limit equal to 0. So $2^{n}$ is Big O of $n^{51}+n^{49}$.
+\paragraph{e)} $\lim_{n\to\infty}$ $\frac{2^{n}}{5^{n}}$ = $\lim_{n\to\infty}$ $(2/5)^{n}$ = 0. \\
+\\
+Because this division goes to 0. So $5^{n}$ is Big O of $2^{n}$.
+\paragraph{f)} $\lim_{n\to\infty}$ $\frac{5^{n}}{(n!)^{2}}$ = 0 Also, \\
+\\
+When $n \ge 6$ and so on, the denominator is bigger than the nominator. So when the limit goes to infinity, the result goes to 0.
+
+\section*{Answer 5}
+\paragraph{a)} $gcd(94,134)$\\
+$134 = 94*1 + 40$ \\
+$94/40 = 40*2 +14$\\
+$40/14 = 14*2 + 12$\\
+$14/12 = 12*1 + 2$\\
+$12/2 = 6*2 + 0$\\
+$gcd(2,0) = 2$
+\paragraph{b)} If we take any even number A bigger than 2, it will be sum of two prime number. So A will be like  $A = x+y$ which x and y are prime numbers. So If I extend this to every number bigger than 5, I can do $A=x+y+2$ for every even number bigger than 5. In this way, for example, $A = 4 = 2+2$. I add 2 to the A, then it will 6. $6 = 3+3$ and if I add 2 to this it will be 8.\\
+\\
+Moreover, I can do $A=x+y+3$ for every odd number bigger than 5. In this way,\\
+$A = 4 = 2+2$. I add 3 to this and get $A = 2+2+3 = 7$. I can go on. $A = 6 = 3 +3$. I add 3 to this and get $A = 3+3+3 = 9$. \\
+\\
+ In conclusion, using Goldbach's conjecture, if I add 2 to every even number, I can write the next even number as the sum of 3 prime numbers, but if I add 3 to each even number, I can write the odd numbers as the sum of 3 prime numbers. Thus I can extend Goldbach's conjecture.
+
+\end{document}
